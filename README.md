@@ -17,8 +17,7 @@ This project was created to practice CSS styling and make a basic calculator loo
 - Error handling for division/modulus by zero
 
 ## 📷 Preview
-![Calculator Screenshot]
-(JUL1.png)
+![Calculator Screenshot](JUL1.png)
 
 
 ## 🚀 How to Run
