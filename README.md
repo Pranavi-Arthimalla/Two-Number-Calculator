@@ -18,7 +18,7 @@ This project was created to practice CSS styling and make a basic calculator loo
 
 ## 📷 Preview
 ![Calculator Screenshot]
-(screenshot.png)  
+JUL1.png
 
 
 ## 🚀 How to Run
