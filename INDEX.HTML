@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #b76b8a, #6b93a5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    
+    .calculator {
+      background-color: #fffafc;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 320px;
+    }
+    
+    .calculator h2 {
+      color: #a678b3;
+      margin-bottom: 20px;
+    }
+
+    
+    input[type="number"] {
+      width: 120px;
+      padding: 10px;
+      margin: 5px;
+      border: 2px solid #f8bbd0;
+      border-radius: 10px;
+      font-size: 16px;
+      background-color: #dbcacf;
+      color: #6a4c93;
+    }
+
+    
+    #result {
+      width: 260px;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: right;
+      background-color: #b7a0b4;
+      color: #0c476e;
+      border: 2px solid #ba68c8;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      color: white;
+    }
+
+    #num1-btn { background-color: #f48fb1; } /* soft pink */
+    #num2-btn { background-color: #ce93d8; } /* lavender */
+    #num3-btn { background-color: #81d4fa; } /* baby blue */
+    #num4-btn { background-color: #6cc6bd; } /* mint green */
+    #num5-btn { background-color: #ffcc80; } /* peach */
+    #num6-btn { background-color: #7ed3b1; } /* lilac */
+
+   
+    button:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2> <B>CALCULATOR</B></h2>
+    <input type="number" id="num1" placeholder="First number">
+    <input type="number" id="num2" placeholder="Second number">
+    <br><br>
+    <button id="num1-btn" onclick="num('add')">Add</button>
+    <button id="num2-btn" onclick="num('sub')">Subtract</button>
+    <button id="num3-btn" onclick="num('mul')">Multiply</button>
+    <button id="num4-btn" onclick="num('div')">Divide</button>
+    <button id="num5-btn" onclick="num('mod')">Modulus</button>
+    <button id="num6-btn" onclick="num('exp')">Exponent</button>
+    <br><br>
+    <input type="text" id="result" placeholder="Result" readonly>
+  </div>
+
+  <script>
+    function num(op) {
+      let num1 = Number(document.getElementById("num1").value);
+      let num2 = Number(document.getElementById("num2").value);
+      let result;
+      switch (op) {
+        case 'add': result = num1 + num2; break;
+        case 'sub': result = num1 - num2; break;
+        case 'mul': result = num1 * num2; break;
+        case 'div': result = num2 !== 0 ? num1 / num2 : 'Error'; break;
+        case 'mod': result = num2 !== 0 ? num1 % num2 : 'Error'; break;
+        case 'exp': result = Math.pow(num1, num2); break;
+        default: result = 'Invalid operation';
+      }
+      document.getElementById("result").value = result;
+    }
+  </script>
+</body>
+</html>
